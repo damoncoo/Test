@@ -1,0 +1,18 @@
+name: Build
+
+on:
+  repository_dispatch:
+    types: [start-yt-download]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@master
+
+      - name: Start Job
+        run: |
+          echo ${{ github.event.client_payload.url }}
+          echo ${{ github.event.client_payload.title }}
