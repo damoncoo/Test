@@ -15,4 +15,5 @@ jobs:
       - name: Start Job
         run: |
           echo ${{ github.event.client_payload.url }}
-          echo ${{ github.event.client_payload.title }}
+          echo ${{ github.event.client_payload.singer }}   
+          echo ${{ github.event.client_payload.name }}
