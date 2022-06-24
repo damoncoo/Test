@@ -10,8 +10,6 @@ steps:
   - name: build
     commands:
       - echo building...
-      - echo "$DOCKER-HUB-USERNAME"
-      - echo "$DOCKER-HUB-PASSWORD"
       - sh make.sh
     when:
       branch:
