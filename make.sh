@@ -1,2 +1,2 @@
 
-echo "$USERNAME"
+echo "User Name : $USERNAME"
