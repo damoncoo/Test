@@ -11,6 +11,7 @@ steps:
     commands:
       - echo building...
       - sh make.sh
+      - echo "$USERNAME"
     when:
       branch:
         - master
