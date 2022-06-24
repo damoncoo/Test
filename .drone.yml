@@ -1,0 +1,25 @@
+kind: pipeline
+name: default
+type: exec
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: build
+    commands:
+      - echo building...
+      - echo $${{DOCKER-HUB-USERNAME}}
+      - echo $${{DOCKER-HUB-PASSWORD}}
+    when:
+      branch:
+        - master
+      event:
+        - push
+    environment:
+      GOPROXY: https://goproxy.io,direct
+      DOCKER-HUB-USERNAME:
+        from_secret: DOCKER-HUB-USERNAME
+      DOCKER-HUB-PASSWORD:
+        from_secret: DOCKER-HUB-PASSWORD
