@@ -18,4 +18,6 @@ steps:
         - push
     environment:
       GOPROXY: https://goproxy.io,direct
+      USERNAME:
+        from_secret: docker_username
 
