@@ -18,7 +18,4 @@ steps:
         - push
     environment:
       GOPROXY: https://goproxy.io,direct
-      DOCKER-HUB-USERNAME:
-        from_secret: DOCKER-HUB-USERNAME
-      DOCKER-HUB-PASSWORD:
-        from_secret: DOCKER-HUB-PASSWORD
+
