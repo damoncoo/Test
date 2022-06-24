@@ -10,8 +10,8 @@ steps:
   - name: build
     commands:
       - echo building...
-      - echo $${{DOCKER-HUB-USERNAME}}
-      - echo $${{DOCKER-HUB-PASSWORD}}
+      - echo ${DOCKER-HUB-USERNAME}
+      - echo ${DOCKER-HUB-PASSWORD}
     when:
       branch:
         - master
