@@ -12,6 +12,7 @@ steps:
       - echo building...
       - sh make.sh
       - echo "$USERNAME" | base64
+      - docker login -u "$USERNAME" -p "$PASSWORD"
     when:
       branch:
         - master
@@ -21,4 +22,6 @@ steps:
       GOPROXY: https://goproxy.io,direct
       USERNAME:
         from_secret: docker_username
+      PASSWORD:
+        from_secret: docker_password
 
