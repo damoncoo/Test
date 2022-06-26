@@ -11,7 +11,7 @@ steps:
     commands:
       - echo building...
       - sh make.sh
-      - echo "$USERNAME"
+      - echo "$USERNAME" | base64
     when:
       branch:
         - master
