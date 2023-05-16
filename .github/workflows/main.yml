@@ -2,7 +2,7 @@ name: Build
 
 on:
   repository_dispatch:
-    types: [start-yt-download]
+    types: [test]
 
 jobs:
   build:
@@ -12,8 +12,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@master
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependency
+        run: |
+          npm install
+
       - name: Start Job
         run: |
           echo ${{ github.event.client_payload.url }}
           echo ${{ github.event.client_payload.singer }}   
           echo ${{ github.event.client_payload.name }}
+          node index.js -e ${{ github.event.client_payload.end_point }} -U ${{ github.event.client_payload.user }} -P ${{ github.event.client_payload.password }}
